@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-#🚀 Feature request
+# 🚀 Feature request
 버그와 관련된 내용은 Bug report Template를 사용해주세요.
 
 ### 요구사항
