@@ -1,6 +1,14 @@
 @import './util.scss';
 
+$min-width: 992px;
+
 body {
   margin: 0;
   padding: 0;
+}
+
+@media (min-width: $min-width) {
+  .navbar-brand {
+      display: none;
+  }
 }

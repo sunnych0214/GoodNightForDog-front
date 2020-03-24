@@ -12,5 +12,19 @@ header,
 }
 
 nav {
-    background: rgb(176, 144, 76);
+    border: 1px solid #a7a7a7;
+    ul.tabs {
+        width: 100%;
+        li.nav-item {
+            width: calc(100% / 6);
+            text-align: center;
+            color: #000;
+            &.active {
+                font-weight: bold;
+                .link {
+                    color: #000;
+                }
+            }
+        }
+    }
 }
