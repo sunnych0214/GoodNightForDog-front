@@ -43,8 +43,8 @@ class navbarModule extends Component {
 
   render () {
     return (
-      <nav className={cx('navbar', 'fixed-top', 'navbar-expand-lg', 'navbar-light', 'indigo')}>
-        <a className={cx('navbar-brand')} href="/"><strong>하룻밤</strong></a>
+      <nav className={cx('navbar', 'sticky-top', 'navbar-expand-lg', 'navbar-light', 'indigo')}>
+        <Link className={cx('navbar-brand')} to="/"><strong>하룻밤</strong></Link>
         <button className={cx('navbar-toggler')} type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className={cx('navbar-toggler-icon')}></span>
         </button>
