@@ -1,10 +1,22 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import styles from './Home.module.scss';
 import classnames from 'classnames/bind';
 
-import { AdoptItem } from 'components';
-import { Slide } from 'react-slideshow-image';
+import { AdoptItem } from '../../components';
 import { Link } from 'react-router-dom';
+
+// import * from 'react-slideshow-image';
+
+// tslint:disable-next-line: no-var-requires
+// const Slide = require('react-slideshow-image');
+
+// tslint:disable-next-line:no-empty-interface
+interface IRecipeProps { }
+
+interface IRecipeState {
+  slideImages: string[];
+  euthanasiaDogs: any[];
+}
 
 const mockupData = {
   slideImages: ['images/slide1.png', 'images/slide2.png'],
@@ -72,8 +84,9 @@ const properties = {
   pauseOnHover: true,
 }; // react slide properties
 
-class HomeModule extends Component {
-  constructor(props) {
+class HomeModule extends Component<IRecipeProps, IRecipeState> {
+
+  constructor(props: IRecipeProps) {
     super(props);
 
     this.state = {
@@ -86,6 +99,7 @@ class HomeModule extends Component {
     return (
       <div className={cx('container')}>
         <div className={cx('slide-container')}>
+          {/*
           <Slide {...properties}>
             {
               this.state.slideImages.map((image, index) => <div className={cx('each-slide')} key={index}>
@@ -93,6 +107,7 @@ class HomeModule extends Component {
               </div>)
             }
           </Slide>
+          */}
         </div>
 
         <div className={cx('divider')}></div>
