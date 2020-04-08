@@ -20,9 +20,9 @@ git clone https://github.com/sunnych0214/GoodNightForDog-front.git
 │   ├──  pages/           - 페이지 폴더
 │   └──  shared/          - router 설정 파일 폴더
 │
-├── index.js              - 리액트 돔 설정 폴더
-├── serviceWorker.js      - react create app 포함 파일..
-└── setupTests.js         - react create app 포함 파일..
+├── index.tsx              - 리액트 돔 설정 폴더
+├── serviceWorker.ts      - react create app 포함 파일..
+└── setupTests.ts         - react create app 포함 파일..
 ```
 
 ## 실행
