@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
-import { Home, About } from "pages";
-import { Header } from "components";
+import { Home, About } from "../pages";
+import { Header } from "../components";
 
 class App extends Component {
 

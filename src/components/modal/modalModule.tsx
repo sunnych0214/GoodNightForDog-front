@@ -4,8 +4,17 @@ import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
 
-class modalModule extends Component {
-  constructor (props) {
+interface IRecipeProps {
+  visible: boolean;
+  close: Function,
+}
+
+interface IRecipeState {
+  isOpen: boolean;
+}
+
+class modalModule extends Component<IRecipeProps, IRecipeState> {
+  constructor (props: any) {
     super(props);
 
     this.state = {
@@ -14,7 +23,7 @@ class modalModule extends Component {
   }
 
   render() {
-    const { visible, close } = this.props;
+    const { visible, close }: Readonly<any> = this.props;
     return (
       <React.Fragment>
         {
