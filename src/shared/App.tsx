@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
-import { About, Main } from "../pages";
+import { Home, About } from "../pages";
 import { Header } from "../components";
 
 class App extends Component {
@@ -8,8 +8,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header></Header>
-        <Route exact path="/" component={Main} />
+        <Header name="김태은" />
+        <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
       </div>
     );
