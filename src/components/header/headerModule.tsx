@@ -10,7 +10,7 @@ const cx = classNames.bind(styles);
 interface IRecipeProps {
 }
 
-class headerModule extends Component<IRecipeProps> {
+class HeaderComponent extends Component<IRecipeProps> {
   constructor (props: IRecipeProps) {
     super(props);
 
@@ -35,4 +35,4 @@ class headerModule extends Component<IRecipeProps> {
   }
 }
 
-export default headerModule;
+export default HeaderComponent;

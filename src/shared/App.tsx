@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
-import { Home, About } from "../pages";
+import { About, Main } from "../pages";
 import { Header } from "../components";
 
 class App extends Component {
@@ -8,7 +8,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Route exact path="/" component={Home} />
+        <Header></Header>
+        <Route exact path="/" component={Main} />
         <Route path="/about" component={About} />
       </div>
     );

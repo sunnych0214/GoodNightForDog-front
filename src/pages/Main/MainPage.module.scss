@@ -1,20 +1,22 @@
-@import './../../assets/stylesheets/style.scss';
+@import "./../../assets/stylesheets/style.scss";
 
 $slideHeight: 250px;
 
 .container {
   margin: 10px;
-  .slide-container {
-    width: 100%;
-    margin: 20px 0;
-    div.each-slide {
-      text-align: center;
-      border: 1px solid #a7a7a7;
-      img.image {
-        align-items: center;
-        justify-content: center;
-        height: $slideHeight;
-      }
+
+  .side-container {
+    .control-btn {
+        > div.icon {
+            padding: 10px 5px;
+            background: rgba(0, 0, 0, .3);
+            border-radius: 50px;
+        }
+    }
+    .slide_image {
+      width: auto;
+      height: $slideHeight;
+      margin: auto;
     }
   }
 
