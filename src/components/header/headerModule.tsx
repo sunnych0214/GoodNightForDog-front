@@ -1,16 +1,10 @@
 import React, { Component } from "react";
-import styles from "./header.module.scss";
-import classNames from "classnames/bind";
-import { Link } from "react-router-dom";
-import { Navbar } from "..";
 
-const cx = classNames.bind(styles);
-
-// tslint:disable-next-line:no-empty-interface
 interface IRecipeProps {
+  name: string
 }
 
-class HeaderComponent extends Component<IRecipeProps> {
+class headerModule extends Component<IRecipeProps> {
   constructor (props: IRecipeProps) {
     super(props);
 
@@ -20,19 +14,14 @@ class HeaderComponent extends Component<IRecipeProps> {
   }
 
   render () {
+    const { name } = this.props;
+
     return (
-      <div className={cx('header')}>
-        <div className={cx('account')}>
-          <button className={cx('btn', 'btn-link', 'login')}>로그인</button>
-          <button className={cx('btn', 'btn-link', 'register')}>회원가입</button>
-        </div>
-        <div className={cx('logo')}>
-          <Link to="/"><img src="logo.svg" alt="logo" /></Link>
-        </div>
-        <Navbar></Navbar>
+      <div>
+        {name}
       </div>
     );
   }
 }
 
-export default HeaderComponent;
+export default headerModule;
