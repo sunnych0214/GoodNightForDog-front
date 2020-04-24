@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
-import { About, Main } from "../pages";
+import { About, Main, Login } from "../pages";
 import { Header } from "../components";
 
 class App extends Component {
@@ -11,6 +11,7 @@ class App extends Component {
         <Header></Header>
         <Route exact path="/" component={Main} />
         <Route path="/about" component={About} />
+        <Route path="/login" component={Login} />
       </div>
     );
   }
