@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styles from './AdoptPage.module.scss';
 import classnames from 'classnames/bind';
 import InputRange from 'react-input-range';
-import { Dropdown, Pagination } from 'semantic-ui-react';
+import { Dropdown, Pagination, PaginationProps, DropdownProps } from 'semantic-ui-react';
 import { AdoptItem } from '../../components';
 import 'react-input-range/lib/css/input-range/input-range.css';
 
@@ -39,8 +39,8 @@ interface AdoptStateModel {
 }
 
 class AdoptPage extends Component<AdoptPropsModel, AdoptStateModel> {
-    private totalPage: number = 10; // 전체 페이지 count
-    private activePage: number = 1; // 현재 페이지
+    totalPage: number = 10; // 전체 페이지 count
+    activePage: number = 1; // 현재 페이지
 
     constructor(props: Readonly<AdoptPropsModel>) {
         super(props);
@@ -77,8 +77,9 @@ class AdoptPage extends Component<AdoptPropsModel, AdoptStateModel> {
     /**
      * 지역 DroptDown 변경
      */
-    changeLocation(e: any, data: any) {
-        this.setState({ locationFilter: data.value });
+    changeLocation(e: React.SyntheticEvent<HTMLElement, Event>, data: DropdownProps) {
+        if (!data.value) { return; }
+        this.setState({ locationFilter: data.value.toString() });
 
         this.getAdoptList();
      }
@@ -111,8 +112,9 @@ class AdoptPage extends Component<AdoptPropsModel, AdoptStateModel> {
     /**
      * 페이지 변경 시
      */
-    changePage(event: any, data: any) {
-        this.activePage = data.activePage;
+    changePage(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>, data: PaginationProps) {
+        if (!data.activePage) { return; }
+        this.activePage = Number(data.activePage);
         this.getAdoptList();
     }
 
