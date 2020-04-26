@@ -23,7 +23,9 @@ class HeaderComponent extends Component<IRecipeProps> {
     return (
       <div className={cx('header')}>
         <div className={cx('account')}>
-          <button className={cx('btn', 'btn-link', 'login')}>로그인</button>
+          <button className={cx('btn', 'btn-link', 'login')}>
+            <Link to="/login">로그인</Link>
+          </button>
           <button className={cx('btn', 'btn-link', 'register')}>회원가입</button>
         </div>
         <div className={cx('logo')}>
