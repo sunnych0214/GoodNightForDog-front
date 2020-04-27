@@ -1,6 +1,21 @@
 @import './util.scss';
+@import './color.scss';
 
 body {
   margin: 0;
   padding: 0;
+}
+
+// Range Filter
+.input-range {
+  .input-range__track--background {
+    background: $darkGrey;
+  }
+  .input-range__track--active {
+    background: $point;
+  }
+  .input-range__slider {
+    background: $point;
+    border-color: $point;
+  }
 }
