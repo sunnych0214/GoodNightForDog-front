@@ -1,0 +1,50 @@
+@import "./../../../assets/stylesheets/style.scss";
+
+.container {
+    margin: auto;
+    max-width: 800px;
+}
+
+.comment {
+    margin: 20px 0;
+    font-size: 21px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.item {
+    display: inline-block;
+    margin: 5px 0;
+    font-size: 15px;
+    .title {
+        display: inline-block;
+        font-weight: bold;
+        width: 150px;
+    }
+}
+
+.sub-comment {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.buttons {
+    margin-top: 20px;
+    button {
+        width: calc(50% - 20px);
+        height: 40px;
+        margin: 0 10px;
+        font-size: 15px;
+        font-weight: bold;
+        border: 1px solid $point;
+        border-radius: 5px;
+        &:first-child {
+            color: $point;
+            background: #fff;
+        }
+        &:last-child {
+            color: #fff;
+            background: $point;
+        }
+    }
+}
