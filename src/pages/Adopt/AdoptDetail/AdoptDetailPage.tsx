@@ -61,7 +61,7 @@ class AdoptDetailPage extends Component<AdoptDetailPropsModel, AdoptDetailStateM
             시각적 운동을 멈추지 않고, 발견하기를 기다린다. 상상은 그렇게 실현된다.<br /><br />
             이 아이의 가족이 되어주세요!
         </div>);
-        const images = [ ... adopt.images || [] ];
+        const images = [ ...adopt.images || [] ];
         const nonImageUrl = '';
 
         const slideSetting = {
