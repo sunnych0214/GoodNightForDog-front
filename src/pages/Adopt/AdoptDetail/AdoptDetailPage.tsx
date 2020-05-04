@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import styles from './AdoptDetailPage.module.scss';
 import classnames from 'classnames/bind';
 import { AdoptModel } from '../../../models/interfaces';
+import Swiper from 'react-id-swiper';
+import 'swiper/css/swiper.css';
 
 const cx = classnames.bind(styles);
 
@@ -48,9 +50,33 @@ class AdoptDetailPage extends Component<AdoptDetailPropsModel, AdoptDetailStateM
             이 아이의 가족이 되어주세요!
         </div>);
 
+        const params = {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true
+            },
+            pagination: {
+                el: '.swiper-pagination'
+            }
+        };
+
+        const images = [ ... adopt.images || [] ];
+        const nonImageUrl = '';
+
         return (<div className={cx('container')}>
             <div className={cx('image-slide')}>
-                이미지 슬라이드 들어가는 공간
+                <Swiper {...params}>
+                    { <div className={cx('slide')} style={{ backgroundImage:'url(' + (images[0] || nonImageUrl)  + ')' }} /> }
+                    { <div className={cx('slide')} style={{ backgroundImage:'url(' + (images[1] || nonImageUrl)  + ')' }} /> }
+                    { <div className={cx('slide')} style={{ backgroundImage:'url(' + (images[2] || nonImageUrl)  + ')' }} /> }
+                </Swiper>
             </div>
 
             <div className={cx('comment')}>
@@ -166,5 +192,6 @@ const mockupAdoptItem: AdoptModel = {
     euthanasia_date: '미정',
     dog_id: '23123',
     create_date: new Date().toString(),
-    update_date: new Date().toString()
+    update_date: new Date().toString(),
+    images: ['../images/slide1.png', '../images/slide2.png', '../images/slide1.png']
 };

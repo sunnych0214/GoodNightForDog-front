@@ -20,4 +20,5 @@ export interface AdoptModel {
     create_date: string;    // 작성일
     update_date: string;    // 수정일
     delete_Date?: string;    // 삭제일
+    images: string[];        // 이미지 array
 }

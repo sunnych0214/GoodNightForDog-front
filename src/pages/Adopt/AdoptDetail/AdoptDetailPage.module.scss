@@ -1,8 +1,9 @@
 @import "./../../../assets/stylesheets/style.scss";
 
 .container {
-    margin: auto;
     max-width: 800px;
+    margin: auto;
+    padding-top: 30px;
 }
 
 .comment {
@@ -47,4 +48,13 @@
             background: $point;
         }
     }
+}
+
+div.slide {
+    width: 20rem;
+    height: 20rem;
+    background-color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
 }
