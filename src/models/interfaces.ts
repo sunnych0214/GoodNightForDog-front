@@ -21,4 +21,8 @@ export interface AdoptModel {
     update_date: string;    // 수정일
     delete_Date?: string;    // 삭제일
     images: string[];        // 이미지 array
+    notice_sdt: string;      // 공고 시작일
+    notice_edt: string;      // 공고 종료일
+    desertion_no: number;    // 유기 번호
+    done: boolean;           // 입양 여부 (front test)
 }

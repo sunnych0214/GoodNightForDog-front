@@ -3,7 +3,9 @@ import styles from './AdoptDetailPage.module.scss';
 import classnames from 'classnames/bind';
 import { AdoptModel } from '../../../models/interfaces';
 import Swiper from 'react-id-swiper';
+import moment from 'moment';
 import 'swiper/css/swiper.css';
+import { Link } from 'react-router-dom';
 
 const cx = classnames.bind(styles);
 
@@ -28,6 +30,10 @@ class AdoptDetailPage extends Component<AdoptDetailPropsModel, AdoptDetailStateM
         };
     }
 
+    /**
+     * 페이지 진입 시 넘어온 id값을 이용하여
+     * 해당 유기견의 디테일 정보를 가져온다.
+     */
     componentDidMount() {
         const id: string = this.props.match.params.id;
 
@@ -40,17 +46,25 @@ class AdoptDetailPage extends Component<AdoptDetailPropsModel, AdoptDetailStateM
         });
     }
 
+    /**
+     * 연락 버튼 클릭 시
+     */
+    clickContact(): void {
+        // TODO: 연락 버튼 클릭 시 채팅을 띄워줘야 함.
+    }
+
     render() {
         const { adopt }: { adopt: AdoptModel } = this.state;
-
         const comment: string = `아이의 가족이 되어주시겠습니까?`;
         const subComment = (<div>
             상상은 반드시 반복 행위를 동반한다. 자유의지를 가진 우리는 구조 속에서 정신적,<br />
             시각적 운동을 멈추지 않고, 발견하기를 기다린다. 상상은 그렇게 실현된다.<br /><br />
             이 아이의 가족이 되어주세요!
         </div>);
+        const images = [ ... adopt.images || [] ];
+        const nonImageUrl = '';
 
-        const params = {
+        const slideSetting = {
             effect: 'coverflow',
             grabCursor: true,
             centeredSlides: true,
@@ -62,17 +76,12 @@ class AdoptDetailPage extends Component<AdoptDetailPropsModel, AdoptDetailStateM
                 modifier: 1,
                 slideShadows: true
             },
-            pagination: {
-                el: '.swiper-pagination'
-            }
+            pagination: { el: '.swiper-pagination' }
         };
-
-        const images = [ ... adopt.images || [] ];
-        const nonImageUrl = '';
 
         return (<div className={cx('container')}>
             <div className={cx('image-slide')}>
-                <Swiper {...params}>
+                <Swiper {...slideSetting}>
                     { <div className={cx('slide')} style={{ backgroundImage:'url(' + (images[0] || nonImageUrl)  + ')' }} /> }
                     { <div className={cx('slide')} style={{ backgroundImage:'url(' + (images[1] || nonImageUrl)  + ')' }} /> }
                     { <div className={cx('slide')} style={{ backgroundImage:'url(' + (images[2] || nonImageUrl)  + ')' }} /> }
@@ -90,15 +99,15 @@ class AdoptDetailPage extends Component<AdoptDetailPropsModel, AdoptDetailStateM
                 </div>
                 <div className={cx('item', 'col-6')}>
                     <span className={cx('title')}>접수일</span>
-                    <span className={cx('content')}>{adopt.create_date}</span>
+                    <span className={cx('content')}>{moment(adopt.create_date).format('YYYY.MM.DD')}</span>
                 </div>
                 <div className={cx('item', 'col-6')}>
                     <span className={cx('title')}>공고시작일</span>
-                    <span className={cx('content')}>{adopt.dog_id}</span>
+                    <span className={cx('content')}>{moment(adopt.notice_sdt).format('YYYY.MM.DD')}</span>
                 </div>
                 <div className={cx('item', 'col-6')}>
                     <span className={cx('title')}>공고종료일</span>
-                    <span className={cx('content')}>{adopt.euthanasia_date}</span>
+                    <span className={cx('content')}>{moment(adopt.notice_edt).format('YYYY.MM.DD')}</span>
                 </div>
                 <div className={cx('item', 'col-6')}>
                     <span className={cx('title')}>나이</span>
@@ -130,7 +139,7 @@ class AdoptDetailPage extends Component<AdoptDetailPropsModel, AdoptDetailStateM
                 </div>
                 <div className={cx('item', 'col-6')}>
                     <span className={cx('title')}>유기번호</span>
-                    <span className={cx('content')}>{adopt.dog_id}</span>
+                    <span className={cx('content')}>{adopt.desertion_no}</span>
                 </div>
                 <div className={cx('item', 'col-6')}>
                     <span className={cx('title')}>특이사항</span>
@@ -163,8 +172,10 @@ class AdoptDetailPage extends Component<AdoptDetailPropsModel, AdoptDetailStateM
             </div>
 
             <div className={cx('buttons')}>
-                <button>연락</button>
-                <button>입양 / 임보 신청</button>
+                <button onClick={_ => this.clickContact()}>연락</button>
+                { adopt.done ?
+                    <Link to={`adopt-review/${adopt.dog_info_id}`}><button>입양 후기 보러가기</button></Link>
+                    : <Link to={`adopt-apply/${adopt.dog_info_id}`}><button>입양 / 임보 신청</button></Link>}
             </div>
         </div>);
     }
@@ -191,7 +202,11 @@ const mockupAdoptItem: AdoptModel = {
     inoculation_status: '5차까지 완료',
     euthanasia_date: '미정',
     dog_id: '23123',
-    create_date: new Date().toString(),
-    update_date: new Date().toString(),
-    images: ['../images/slide1.png', '../images/slide2.png', '../images/slide1.png']
+    create_date: new Date().toISOString(),
+    update_date: new Date().toISOString(),
+    images: ['../images/slide1.png', '../images/slide2.png', '../images/slide1.png'],
+    notice_sdt: new Date().toISOString(),
+    notice_edt: new Date('2020-10-30').toISOString(),
+    desertion_no: 2324,
+    done: false
 };
