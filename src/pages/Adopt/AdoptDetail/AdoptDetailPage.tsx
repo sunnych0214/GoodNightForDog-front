@@ -55,12 +55,6 @@ class AdoptDetailPage extends Component<AdoptDetailPropsModel, AdoptDetailStateM
 
     render() {
         const { adopt }: { adopt: AdoptModel } = this.state;
-        const comment: string = `아이의 가족이 되어주시겠습니까?`;
-        const subComment = (<div>
-            상상은 반드시 반복 행위를 동반한다. 자유의지를 가진 우리는 구조 속에서 정신적,<br />
-            시각적 운동을 멈추지 않고, 발견하기를 기다린다. 상상은 그렇게 실현된다.<br /><br />
-            이 아이의 가족이 되어주세요!
-        </div>);
         const images = [ ...adopt.images || [] ];
         const nonImageUrl = '';
 
@@ -89,7 +83,7 @@ class AdoptDetailPage extends Component<AdoptDetailPropsModel, AdoptDetailStateM
             </div>
 
             <div className={cx('comment')}>
-                {comment}
+                아이의 가족이 되어주시겠습니까?
             </div>
 
             <div className={cx('info')}>
@@ -168,7 +162,11 @@ class AdoptDetailPage extends Component<AdoptDetailPropsModel, AdoptDetailStateM
             </div>
 
             <div className={cx('sub-comment')}>
-                {subComment}
+                {(<div>
+                    상상은 반드시 반복 행위를 동반한다. 자유의지를 가진 우리는 구조 속에서 정신적,<br />
+                    시각적 운동을 멈추지 않고, 발견하기를 기다린다. 상상은 그렇게 실현된다.<br /><br />
+                    이 아이의 가족이 되어주세요!
+                </div>)}
             </div>
 
             <div className={cx('buttons')}>
