@@ -103,7 +103,7 @@ class AdoptReviewPage extends Component<AdoptReviewProps, AdoptReviewState> {
             return;
         }
 
-        // TODO: 검색하는 api 호출 로직 들어갈 예정
+        this.getReviews();
     }
 
     /**
@@ -112,6 +112,7 @@ class AdoptReviewPage extends Component<AdoptReviewProps, AdoptReviewState> {
     changeFilterOption(e: React.SyntheticEvent<HTMLElement, Event>, data: DropdownProps): void {
         if (!data.value) { return; }
         this.setState({ filterOption: data.value as FilterType });
+        this.getReviews();
     }
 
     /**
