@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 const cx = classnames.bind(styles);
 
-interface AdoptDetailPropsModel {
+interface AdoptDetailProps {
     match: {
         params: {
             id: string
@@ -17,12 +17,12 @@ interface AdoptDetailPropsModel {
     };
 }
 
-interface AdoptDetailStateModel {
+interface AdoptDetailState {
     adopt: AdoptModel;
 }
 
-class AdoptDetailPage extends Component<AdoptDetailPropsModel, AdoptDetailStateModel> {
-    constructor(props: Readonly<AdoptDetailPropsModel>) {
+class AdoptDetailPage extends Component<AdoptDetailProps, AdoptDetailState> {
+    constructor(props: Readonly<AdoptDetailProps>) {
         super(props);
 
         this.state = {
