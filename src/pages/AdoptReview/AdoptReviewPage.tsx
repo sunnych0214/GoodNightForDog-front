@@ -99,7 +99,7 @@ class AdoptReviewPage extends Component<AdoptReviewProps, AdoptReviewState> {
     searchReview(): void {
         // 검색 옵션 / 검색 텍스트가 입력이 안 되어 있을 경우 alert
         if (!this.state.searchOption || !this.state.searchText) {
-            alert(this.state.searchText ? '검색 옵션을' : '검색 텍스트를' + '입력해주세요.');
+            alert((this.state.searchText ? '검색 옵션을' : '검색 텍스트를') + '입력해주세요.');
             return;
         }
 
@@ -152,8 +152,8 @@ class AdoptReviewPage extends Component<AdoptReviewProps, AdoptReviewState> {
                             </div>
                             <div className={cx('content')}>
                                 <div className={cx('title')}>{review.adopt_review_title}</div>
-                                <div className={cx('article')}>{review.adopt_review_article.split('\n').map((text: string, index: number) => 
-                                    <span key={'article_' + index}>{text}<br /></span>)}</div>
+                                <div className={cx('article')}>{review.adopt_review_article.split('\n').map((text: string, i: number) =>
+                                    <span key={'article_' + i}>{text}<br /></span>)}</div>
                                 <Link to={'adopt-review/' + review.adopt_info_id}>
                                     <button className={cx('view-detail')}>자세히 보기</button>
                                 </Link>
@@ -164,7 +164,7 @@ class AdoptReviewPage extends Component<AdoptReviewProps, AdoptReviewState> {
             </div>
 
             <div className={cx('pagination')}>
-                <Pagination defaultActivePage={1} totalPages={this.totalPage} 
+                <Pagination defaultActivePage={1} totalPages={this.totalPage}
                     onPageChange={this.changePage.bind(this)}/>
             </div>
         </div>);
