@@ -1,0 +1,72 @@
+@import "./../../assets/stylesheets/style.scss";
+
+.search-filter-container {
+    position: relative;
+    height: 70px;
+    .search-box, .filter-box {
+        position: absolute;
+        top: 15px;
+    }
+    .search-box {
+        left: 20px;
+    }
+    .filter-box {
+        right: 20px;
+    }
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    margin: 10px 0;
+    background: #a7a7a7;
+}
+
+.adopt-review-item {
+    display: flex;
+    height: 150px;
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #a7a7a7;
+    .image, .content {
+        flex: 1;
+    }
+    .image {
+        width: 150px;
+        max-width: 150px;
+        height: calc(150px - 40px);
+        text-align: center;
+        img {
+            display: block;
+            width: auto;
+            max-width: 150px;
+            height: calc(150px - 40px);
+        }
+    }
+    .content {
+        position: relative;
+        width: calc(100% - 150px);
+        .title {
+            font-size: 22px;
+            font-weight: bold;
+        }
+        .article {
+            margin-top: 5px;
+            font-size: 14px;
+        }
+        .view-detail {
+            position: absolute;
+            bottom: 0px;
+            width: 150px;
+            height: 30px;
+            color: #fff;
+            background: $point;
+            border-color: $point;
+            border-radius: 5px;
+        }
+    }
+}
+
+.pagination {
+    text-align: center;
+}
