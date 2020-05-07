@@ -3,6 +3,7 @@ import styles from './AdoptReviewPage.module.scss';
 import classnames from 'classnames/bind';
 import { Dropdown, DropdownProps, Pagination, PaginationProps } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
+import { AdoptReviewModel } from '../../models/interfaces';
 
 const cx = classnames.bind(styles);
 const SearchOptions = [{
@@ -22,20 +23,6 @@ const FilterOptions = [{
 
 type SearchType = 'titleAndContent' | 'writer';
 type FilterType = 'latest';
-
-// TODO: 추후에 feat/adopt-detail branch에서 만든 interfaces.ts 파일에 옮길 예정
-export interface AdoptReviewModel {
-    adopt_review_id: number;        // 후가 아이디
-    adopt_writer_id: string;        // 작성자 아이디
-    image: string;                  // 이미지
-    adopt_info_id: number;          // 신청 정보 아이디
-    adopt_review_title: string;     // 제목
-    adopt_review_article: string;   // 본문 내용
-    adopt_review_comment: string;   // 댓글
-    adopt_review_createDate: string;// 후기 작성일
-    adpot_review_editDate?: string;  // 후기 수정 날짜
-    adopt_review_deleteDate?: string;// 후기 삭제 날짜
-}
 
 // tslint:disable-next-line:no-empty-interface
 interface AdoptReviewProps {
