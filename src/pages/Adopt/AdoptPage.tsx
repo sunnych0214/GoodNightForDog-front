@@ -27,9 +27,9 @@ interface RangeModel {
 type SortingType = 'imminent' | 'alphabetically';
 
 // tslint:disable-next-line:no-empty-interface
-interface AdoptPropsModel {
+interface AdoptProps {
 }
-interface AdoptStateModel {
+interface AdoptState {
     weightRange: RangeModel;    // 몸무게 filter range
     adoptFilter: boolean;       // 입양 checkbox flag
     temporaryFilter: boolean;   // 임시보호 checkbox flag
@@ -38,11 +38,11 @@ interface AdoptStateModel {
     adoptList: any[];           // 입양 리스트
 }
 
-class AdoptPage extends Component<AdoptPropsModel, AdoptStateModel> {
+class AdoptPage extends Component<AdoptProps, AdoptState> {
     totalPage: number = 10; // 전체 페이지 count
     activePage: number = 1; // 현재 페이지
 
-    constructor(props: Readonly<AdoptPropsModel>) {
+    constructor(props: Readonly<AdoptProps>) {
         super(props);
 
         this.state = {
