@@ -26,3 +26,16 @@ export interface AdoptModel {
     desertion_no: number;    // 유기 번호
     done: boolean;           // 입양 여부 (front test)
 }
+
+export interface AdoptReviewModel {
+    adopt_review_id: number;        // 후가 아이디
+    adopt_writer_id: string;        // 작성자 아이디
+    image: string;                  // 이미지
+    adopt_info_id: number;          // 신청 정보 아이디
+    adopt_review_title: string;     // 제목
+    adopt_review_article: string;   // 본문 내용
+    adopt_review_comment: string;   // 댓글
+    adopt_review_createDate: string;// 후기 작성일
+    adopt_review_editDate?: string;  // 후기 수정 날짜
+    adopt_review_deleteDate?: string;// 후기 삭제 날짜
+}
