@@ -9,10 +9,10 @@ const cx = classNames.bind(style);
 interface Props {}
 
 interface State {
-  donations: DonationPreviewModel[];
+  donations: DonationPreviewModel[]; //후원 리스트
   today_donation: {
-    person_cnt: number;
-    total_money: number;
+    person_cnt: number; //오늘 후원한 사람 수
+    total_money: number; //오늘 전체 후원 금액
   };
 }
 
