@@ -1,9 +1,10 @@
-import React, { Component, FormEvent, ChangeEvent } from "react";
+import React, { Component } from "react";
 import styles from "./missingDetail.module.scss";
 import classNames from "classnames/bind";
 import { MissingModel } from '../../../models/interfaces';
-import { Link } from 'react-router-dom';
 import moment from 'moment';
+import Swiper from 'react-id-swiper';
+import 'swiper/css/swiper.css';
 
 const cx = classNames.bind(styles);
 
@@ -20,7 +21,6 @@ interface MissingDogState{
 class MissingdetailModule extends Component<MissingDogProps,MissingDogState>{
     constructor(props:MissingDogProps){
         super(props);
-
         // 데이터 받아오기
         this.state = {
             missing : {} as MissingModel,
@@ -38,8 +38,32 @@ class MissingdetailModule extends Component<MissingDogProps,MissingDogState>{
         const { _id } = this.props;
         const { missing } : { missing : MissingModel } = this.state;
 
+        const slideSetting = {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true
+            },
+            pagination: { el: '.swiper-pagination' }
+        };
+        const nonImageUrl = ' ';
+        const { missing_dog_image = mockupData.missing_dog_image } = this.state.missing;
+        const imageList = missing_dog_image.map(
+            (image,index) => (<div key={index} className={cx('slide')} style={{backgroundImage:'url('+(image || nonImageUrl)+' )'}}/>)
+        );
         return(
             <div className={cx('container')}>
+                <div className={cx('image-slide')}>
+                    <Swiper {...slideSetting}>
+                        {imageList}
+                    </Swiper>
+                </div><p/>
                 <div className={cx('info')}>
                     <div className={cx('item')}>
                             <span className={cx('title')}>이름</span>
@@ -106,7 +130,9 @@ const mockupData : MissingModel = {
         missing_dog_place : '서울특별시 양천구, 목동문화체육센터 앞',
         missing_dog_reward : '100만원',
         missing_dog_image : [
-            'images/missing1.png'
+            '../images/missing1.png',
+            '../images/missing2.png',
+            '../images/missing3.png'
         ],
         missing_dog_content : '사랑스러운 10살 할아버지 멍멍 입니다. 말티즈와 슈나우저를 닮았어요. 사람을 경계하니 제보만 해주셔도 감사하겠습니다.',
         missing_dog_registered : new Date(),
