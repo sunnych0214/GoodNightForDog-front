@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
-import { About, Main, Login, Adopt, AdoptDetail, AdoptReview, MissingDetail } from "../pages";
+import { About, Main, Login, Adopt, AdoptDetail, AdoptReview, Donation, MissingDetail } from "../pages";
 import { Header } from "../components";
 
 class App extends Component {
@@ -16,6 +16,7 @@ class App extends Component {
         <Route path="/login" component={Login} />
         <Route path="/missing/:id" component={ MissingDetail }/>
         <Route path="/adopt-review" component={AdoptReview} />
+        <Route path="/donation" component={Donation} />
       </div>
     );
   }
