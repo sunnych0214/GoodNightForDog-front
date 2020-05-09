@@ -39,3 +39,29 @@ export interface AdoptReviewModel {
     adopt_review_editDate?: string;  // 후기 수정 날짜
     adopt_review_deleteDate?: string;// 후기 삭제 날짜
 }
+
+export interface MissingModel {
+    missing_id : number;    // 실종게시글 아이디
+    category_id : number;   // 카테고리 아이디
+                            // 1:주인을 찾습니다 2: 반려견을 찾습니다
+    user_id :number;        // 유저 아이디 프라이머리 오토인크리먼트. 아이디는 조인으로
+    missing_dog_name : string;      // 유기견 이름
+    missing_dog_color : string;     // 유기견 색
+    missing_dog_age : number;       // 유기견 나이
+    missing_dog_weight : number;    // 유기견 몸무게
+    missing_dog_kind : string;      // 견종
+    missing_dog_sex : string;       // 성별
+    missing_dog_comment : string;   // 특이사항
+    missing_dog_special : string;   // 특징
+    missing_dog_date : Date;        // 실종일자
+    missing_dog_place : string;     // 실종장소
+    missing_dog_reward : string;    // 사례금
+    missing_dog_image : string[];   // 이미지
+    missing_dog_content : string;   // 추가 코멘트
+    missing_dog_registered : Date;  // 작성일
+    missing_status : number;        // 게시글 상태
+    missing_dog_status : number;    // 강아지 상태
+    missing_delete_date? : Date;     // 게시글 중단(삭제)일
+    missing_update_date? : Date;     // 게시글 수정일
+    missing_create_date : Date;     // 게시글 작성일
+}

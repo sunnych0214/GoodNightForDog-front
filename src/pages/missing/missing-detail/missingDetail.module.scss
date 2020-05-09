@@ -1,0 +1,25 @@
+@import "./../../../assets/stylesheets/style.scss";
+
+.container {
+    max-width: 30vw;
+    margin: auto;
+    padding-top: 30px;
+}
+
+.item {
+    display: block;
+    margin: 5px 0;
+    font-size: 15px;
+    .title {
+        display: inline-block;
+        font-weight: bold;
+        width: 150px;
+    }
+}
+
+.comment {
+    margin: 20px 0;
+    font-size: 21px;
+    font-weight: bold;
+    text-align: center;
+}
