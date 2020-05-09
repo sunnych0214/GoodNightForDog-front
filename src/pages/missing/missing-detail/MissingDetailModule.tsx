@@ -74,6 +74,14 @@ class MissingdetailModule extends Component<MissingDogProps,MissingDogState>{
                             <span className={cx('title')}>사례금</span>
                             <span className={cx('content')}>{missing.missing_dog_reward}</span>
                     </div>
+                    <br/><br/>
+                    <div>
+                        <span className={cx('comment')}>{missing.missing_dog_content}</span>
+                    </div>
+                    <br/><br/>
+                    <div>
+                        <input type='button' value='연락' className={cx('button-contact')}/>
+                    </div>
                 </div>
             </div>
         );
