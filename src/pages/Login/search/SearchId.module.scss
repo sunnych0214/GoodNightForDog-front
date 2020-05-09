@@ -1,4 +1,4 @@
-@import './../../assets/stylesheets/style.scss';
+@import './../../../assets/stylesheets/style.scss';
 
 .box-little{
     margin: 10vh auto;
@@ -13,24 +13,11 @@
     margin : 0px;
 }
 
-.form-login {
-    margin : 0px;
-}
-
-.input-info {
-    margin : 20px 0px;
-}
-
 .input-box {
     margin : 0px;
     width : 100%;
     height : 2.5em;
     box-shadow: none;
-}
-
-.span-little {
-    text-decoration: underline;
-    font-size: small;
 }
 
 .submit-login {
@@ -42,4 +29,11 @@
     border : none;
     position : absolute;
     bottom : 0px;
+}
+
+.input-box {
+    margin : 0px;
+    width : 100%;
+    height : 2.5em;
+    box-shadow: none;
 }

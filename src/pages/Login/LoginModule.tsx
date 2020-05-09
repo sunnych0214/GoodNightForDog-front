@@ -68,9 +68,9 @@ class LoginModule extends Component<UserInfoProps,LoginInfoState>{
                     <input type="password" className={cx('input-box')} value={pw} onChange={onPwChange}/><br/>
 
                     <span className={cx('span-little float-left')}>
-                        <Link to="/login/searchID">아이디</Link>
+                        <Link to="/searchId">아이디</Link>
                         &nbsp;·&nbsp;
-                        <Link to="/login/searchPW">비밀번호</Link>
+                        <Link to="/searchPw">비밀번호</Link>
                         찾기
                     </span>
                     <span className={cx('span-little float-right')}>
