@@ -65,12 +65,12 @@ class DonationModule extends Component<State> {
                   <div className={cx("progress")}>
                     <div
                       className={cx("percent")}
-                      style={{ width: value.goal_money / value.now_money }}
+                      style={{ width: value.now_money / value.goal_money * 100 + '%' }}
                     ></div>
                   </div>
                   <div className={cx("goal")}>
                     <span>
-                      {(value.goal_money / value.now_money).toFixed(3)}%
+                      {(value.now_money / value.goal_money * 100).toFixed(3)}%
                     </span>
                     <span>{value.goal_money.toLocaleString()}원</span>
                   </div>
