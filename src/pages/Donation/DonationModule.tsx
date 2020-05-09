@@ -6,17 +6,15 @@ import no_img from "./../../assets/imgs/no-img.png";
 
 const cx = classNames.bind(style);
 
-interface Props {}
-
 interface State {
-  donations: DonationPreviewModel[]; //후원 리스트
+  donations: DonationPreviewModel[]; // 후원 리스트
   today_donation: {
-    person_cnt: number; //오늘 후원한 사람 수
-    total_money: number; //오늘 전체 후원 금액
+    person_cnt: number; // 오늘 후원한 사람 수
+    total_money: number; // 오늘 전체 후원 금액
   };
 }
 
-class DonationModule extends Component<Props, State> {
+class DonationModule extends Component<State> {
   state: State = {
     donations: [
       {

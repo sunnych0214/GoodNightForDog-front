@@ -3,4 +3,4 @@ export interface DonationPreviewModel {
   thumb: string;
   goal_money: number;
   now_money: number;
-};
+}
