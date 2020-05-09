@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from "./../Login.module.scss";
 import classNames from "classnames/bind";
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -14,6 +15,9 @@ class SearchPwModule extends Component{
             <input type="text" className={cx('input-box')}/><br/><p/>
             <span className={cx('input-info')}>아이디</span><br/>
             <input type="text" className={cx('input-box')}/><br/><p/>
+            <div className={cx('span-little')}>
+                <Link to="/searchId">아이디 찾기</Link>
+            </div><br/>
             <input type="submit" value="비밀번호 찾기" className={cx('submit')}/>
         </div>
         );
