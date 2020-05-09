@@ -80,7 +80,7 @@ class LoginModule extends Component<UserInfoProps,LoginInfoState>{
 
                     </span>
 
-                    <input type="submit" value="로그인" className={cx('submit-login')}/>
+                    <input type="submit" value="로그인" className={cx('submit')}/>
                 </form>
             </div>
         );
