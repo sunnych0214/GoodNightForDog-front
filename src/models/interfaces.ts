@@ -42,7 +42,7 @@ export interface AdoptReviewModel {
 
 export interface MissingModel {
     missing_id : number;    // 실종게시글 아이디
-    category_id : number;   // 카테고리 아이디
+    category_id : 1 | 2;   // 카테고리 아이디
                             // 1:주인을 찾습니다 2: 반려견을 찾습니다
     user_id :number;        // 유저 아이디 프라이머리 오토인크리먼트. 아이디는 조인으로
     missing_dog_name : string;      // 유기견 이름

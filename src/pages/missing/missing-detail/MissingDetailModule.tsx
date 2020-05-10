@@ -35,9 +35,7 @@ class MissingdetailModule extends Component<MissingDogProps,MissingDogState>{
     }
 
     render(){
-        const { _id } = this.props;
         const { missing } : { missing : MissingModel } = this.state;
-
         const slideSetting = {
             effect: 'coverflow',
             grabCursor: true,
