@@ -13,7 +13,13 @@ interface MyPageState {
     userInfo: {
         name: string;
         uid: string;
-    }
+        image: string;
+        recently_viewing: {
+            _id: string;
+            image: string;
+            name: string;
+        }[];
+    };
 }
 
 class MyPage extends Component<MyPageProps, MyPageState> {
@@ -31,13 +37,13 @@ class MyPage extends Component<MyPageProps, MyPageState> {
     }
 
     render() {
-        const { name, uid } = this.state.userInfo;
+        const { image, name, uid, recently_viewing } = this.state.userInfo;
 
         return (<div>
             <div className={cx('user-info-box')}>
                 <div className={cx('profile')}>
                     <div className={cx('avatar')}>
-                        <img src="images/slide1.png" alt="profile_image"></img>
+                        <img src={image} alt="profile_image"></img>
                     </div>
                     <div className={cx('user-info')}>
                         <div className={cx('name')}>
@@ -68,6 +74,20 @@ class MyPage extends Component<MyPageProps, MyPageState> {
                     입양 신청 내역 관리
                 </button>
             </div>
+
+            <div className={cx('recently-seen')}>
+                <div className={cx('header')}>최근 본 강아지</div>
+                <div className={cx('list')}>
+                    {
+                        recently_viewing && recently_viewing.map((view, index) => <Link to={'adopt/' + view._id } key={'recently_' + index}>
+                            <div className={cx('view-item')}>
+                                <img src={view.image} alt="view_image"></img>
+                                <div className={cx('name')}>{view.name}</div>
+                            </div>
+                        </Link>)
+                    }
+                </div>
+            </div>
         </div>);
     }
 
@@ -77,5 +97,15 @@ export default MyPage;
 
 const mockupUserData = {
     name: '혜진',
-    uid: 'hyejin'
+    uid: 'hyejin',
+    image: 'images/slide1.png',
+    recently_viewing: [{
+        _id: '1',
+        name: '뿌요',
+        image: 'images/slide1.png',
+    }, {
+        _id: '2',
+        name: '뿌요',
+        image: 'images/slide1.png',
+    }]
 }

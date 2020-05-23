@@ -61,3 +61,33 @@
     }
 }
 
+.recently-seen {
+    margin: 30px 20px;
+    padding-top: 30px;
+    border-top: 1px solid $point;
+    .header {
+        color: $point;
+        font-size: 16px;
+        font-weight: 600;
+    }
+    .list {
+        margin-top: 10px;
+        .view-item {
+            display: inline-block;
+            margin-right: 15px;
+            padding: 10px;
+            border: 1px solid $point;
+            border-radius: 5px;
+            > img {
+                width: 200px;
+            }
+            .name {
+                margin-top: 5px;
+                text-align: center;
+                font-size: 15px;
+                color: #000;
+                font-weight: bold;
+            }
+        }
+    }
+}
