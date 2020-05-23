@@ -96,35 +96,34 @@ class MissingWritePage extends Component<MissingWritePageProps, MissingWritePage
     create(): void { }
 
     render() {
-        const { name, age, weight, breed, color, comment,
-            special, reward, place, date, images } = this.state.missing;
+        const { images } = this.state.missing;
 
         return (<div>
             <div className={cx('input-box')}>
                 <div className={cx('input')}>
                     <label>이름</label>
                     <input type="text" placeholder="Ex) 뿌요"
-                        value={name} onChange={this.changeInput.bind(this, 'name')} />
+                        onChange={this.changeInput.bind(this, 'name')} />
                 </div>
                 <div className={cx('input')}>
                     <label>나이</label>
                     <input type="text" placeholder="Ex) 8개월"
-                        value={age} onChange={this.changeInput.bind(this, 'age')} />
+                        onChange={this.changeInput.bind(this, 'age')} />
                 </div>
                 <div className={cx('input')}>
                     <label>채중(KG)</label>
                     <input type="number" placeholder="6"
-                        value={weight} onChange={this.changeInput.bind(this, 'weight')} />
+                        onChange={this.changeInput.bind(this, 'weight')} />
                 </div>
                 <div className={cx('input')}>
                     <label>견종</label>
                     <Dropdown placeholder='Ex) 믹스견' search selection options={this.breeds}
-                        value={breed} onChange={this.changeBreed.bind(this)} />
+                        onChange={this.changeBreed.bind(this)} />
                 </div>
                 <div className={cx('input')}>
                     <label>색상</label>
                     <input type="text" placeholder="Ex) 갈 / 검 / 흰"
-                        value={color} onChange={this.changeInput.bind(this, 'color')} />
+                        onChange={this.changeInput.bind(this, 'color')} />
                 </div>
                 <div className={cx('input', 'gender')}>
                     <label>성별</label>
@@ -134,26 +133,26 @@ class MissingWritePage extends Component<MissingWritePageProps, MissingWritePage
                 <div className={cx('input')}>
                     <label>특이사항</label>
                     <input type="text" placeholder="Ex) 없음"
-                        value={comment} onChange={this.changeInput.bind(this, 'comment')} />
+                        onChange={this.changeInput.bind(this, 'comment')} />
                 </div>
                 <div className={cx('input')}>
                     <label>특징</label>
                     <input type="text" placeholder="Ex) 사회성이 좋음"
-                        value={special} onChange={this.changeInput.bind(this, 'special')} />
+                        onChange={this.changeInput.bind(this, 'special')} />
                 </div>
                 <div className={cx('input')}>
                     <label>실종일자</label>
-                    <input type="date" value={date} onChange={this.changeInput.bind(this, 'date')} />
+                    <input type="date" onChange={this.changeInput.bind(this, 'date')} />
                 </div>
                 <div className={cx('input')}>
                     <label>실종 장소</label>
                     <input type="text" placeholder="Ex) 서울 금천구"
-                        value={place} onChange={this.changeInput.bind(this, 'place')} />
+                        onChange={this.changeInput.bind(this, 'place')} />
                 </div>
                 <div className={cx('input')}>
                     <label>사례금</label>
                     <input type="text" placeholder="Ex) 추후 협의"
-                        value={reward} onChange={this.changeInput.bind(this, 'reward')} />
+                        onChange={this.changeInput.bind(this, 'reward')} />
                 </div>
                 <div className={cx('input')}>
                     <label>첨언</label>
