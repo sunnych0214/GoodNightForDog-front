@@ -74,14 +74,15 @@ class MissingWritePage extends Component<MissingWritePageProps, MissingWritePage
 
     /**
      * 이미지 변경 시
-     * 
+     *
      * @param index 변경 한 이미지의 index
      * @param event 파일 event
      */
-    changeImage(index: number, event: React.SyntheticEvent<HTMLElement, Event>): void {
+    changeImage(index: number, event: React.ChangeEvent<HTMLInputElement>): void {
         if (this.state.missing.thumbnail_index === undefined) {
             this.setState({ missing: Object.assign({}, this.state.missing, { thumbnail_index: index })});
         }
+        if (!event.target.files) { return; }
         const url = URL.createObjectURL(event.target.files[0]);
         const images = JSON.parse(JSON.stringify(this.state.missing.images));
         images[index] = url;
@@ -96,23 +97,23 @@ class MissingWritePage extends Component<MissingWritePageProps, MissingWritePage
 
     render() {
         const { name, age, weight, breed, color, comment,
-            special, reward, place, date, images, thumbnail_index } = this.state.missing;
+            special, reward, place, date, images } = this.state.missing;
 
         return (<div>
             <div className={cx('input-box')}>
                 <div className={cx('input')}>
                     <label>이름</label>
-                    <input type="text" placeholder="Ex) 뿌요" 
+                    <input type="text" placeholder="Ex) 뿌요"
                         value={name} onChange={this.changeInput.bind(this, 'name')} />
                 </div>
                 <div className={cx('input')}>
                     <label>나이</label>
-                    <input type="text" placeholder="Ex) 8개월" 
+                    <input type="text" placeholder="Ex) 8개월"
                         value={age} onChange={this.changeInput.bind(this, 'age')} />
                 </div>
                 <div className={cx('input')}>
                     <label>채중(KG)</label>
-                    <input type="number" placeholder="6" 
+                    <input type="number" placeholder="6"
                         value={weight} onChange={this.changeInput.bind(this, 'weight')} />
                 </div>
                 <div className={cx('input')}>
