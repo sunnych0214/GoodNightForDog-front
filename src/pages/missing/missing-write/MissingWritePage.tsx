@@ -22,6 +22,8 @@ interface MissingWritePageState {
         color: string;
         date: string;
         gender: 'male' | 'female';
+        images: string[];
+        thumbnail_index: number;
     };
 }
 
@@ -35,7 +37,7 @@ class MissingWritePage extends Component<MissingWritePageProps, MissingWritePage
     constructor (props: Readonly<MissingWritePageProps>) {
         super(props);
 
-        this.state = { missing: { gender: 'male' } } as MissingWritePageState;
+        this.state = { missing: { gender: 'male', images: ['', '', ''] } } as MissingWritePageState;
 
         ['골든 리트리버', '꼬똥 드 튤리어', '닥스훈트', '달마시안', '도베르만', '래브라도 리트리버'
         , '말라뮤트', '말티즈', '믹스견', '베들링턴 테리어', '보더콜리', '보스턴테리어', '불독', '비글'
@@ -51,9 +53,7 @@ class MissingWritePage extends Component<MissingWritePageProps, MissingWritePage
      * Input Tag On Change -> state 변경
      */
     changeInput(type: string, evt: ChangeEvent<HTMLInputElement>): void {
-        const missing = JSON.parse(JSON.stringify(this.state.missing));
-        missing[type] = evt.target.value;
-        this.setState({ missing });
+        this.setState({ missing: Object.assign({}, this.state.missing, { [type]: evt.target.value }) });
     }
 
     /**
@@ -61,9 +61,7 @@ class MissingWritePage extends Component<MissingWritePageProps, MissingWritePage
      * @param gender male | female
      */
     changeGender(gender: 'male' | 'female'): void {
-        const missing = JSON.parse(JSON.stringify(this.state.missing));
-        missing.gender = gender;
-        this.setState({ missing });
+        this.setState({ missing: Object.assign({}, this.state.missing, { gender }) });
     }
 
     /**
@@ -71,9 +69,23 @@ class MissingWritePage extends Component<MissingWritePageProps, MissingWritePage
      */
     changeBreed(e: React.SyntheticEvent<HTMLElement, Event>, data: DropdownProps) {
         if (!data.value) { return; }
-        const missing = JSON.parse(JSON.stringify(this.state.missing));
-        missing.breed = data.value.toString();
-        this.setState({ missing });
+        this.setState({ missing: Object.assign({}, this.state.missing, { breed: data.value.toString() }) });
+    }
+
+    /**
+     * 이미지 변경 시
+     * 
+     * @param index 변경 한 이미지의 index
+     * @param event 파일 event
+     */
+    changeImage(index: number, event: React.SyntheticEvent<HTMLElement, Event>): void {
+        if (this.state.missing.thumbnail_index === undefined) {
+            this.setState({ missing: Object.assign({}, this.state.missing, { thumbnail_index: index })});
+        }
+        const url = URL.createObjectURL(event.target.files[0]);
+        const images = JSON.parse(JSON.stringify(this.state.missing.images));
+        images[index] = url;
+        this.setState({ missing: Object.assign({}, this.state.missing, { images })});
     }
 
     /**
@@ -84,7 +96,7 @@ class MissingWritePage extends Component<MissingWritePageProps, MissingWritePage
 
     render() {
         const { name, age, weight, breed, color, comment,
-            special, reward, place, date } = this.state.missing;
+            special, reward, place, date, images, thumbnail_index } = this.state.missing;
 
         return (<div>
             <div className={cx('input-box')}>
@@ -146,6 +158,17 @@ class MissingWritePage extends Component<MissingWritePageProps, MissingWritePage
                     <label>첨언</label>
                     <textarea></textarea>
                 </div>
+
+                <div className={cx('images')}>
+                    {
+                        images.map((image, index) => <div className={cx('image')} key={'image_' + index}>
+                            <input type="file" onChange={this.changeImage.bind(this, index)}></input>
+                            <img src={image} alt="" />
+                            <input type="radio" name="image" value={index} />
+                        </div>)
+                    }
+                </div>
+
                 <div className={cx('buttons')}>
                     <button onClick={() => this.create()}>생성</button>
                 </div>

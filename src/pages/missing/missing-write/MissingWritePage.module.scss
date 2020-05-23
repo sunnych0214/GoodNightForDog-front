@@ -22,6 +22,17 @@
     }
 }
 
+.images {
+    margin-top: 30px;
+    .image {
+        display: inline-block;
+        width: calc(100% / 3);
+        img {
+            max-width: 89%;
+        }
+    }
+}
+
 .buttons {
     margin-top: 20px;
     > button {
