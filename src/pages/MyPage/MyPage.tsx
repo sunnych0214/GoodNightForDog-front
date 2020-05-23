@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 
 const cx = classnames.bind(styles);
 
+// tslint:disable-next-line:no-empty-interface
 interface MyPageProps {
-
 }
 
 interface MyPageState {
@@ -108,4 +108,4 @@ const mockupUserData = {
         name: '뿌요',
         image: 'images/slide1.png',
     }]
-}
+};
