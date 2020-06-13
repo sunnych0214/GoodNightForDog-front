@@ -18,23 +18,27 @@ interface RegisterInfo {
 class RegisterPage extends Component<RegisterInfo> {
     state:RegisterInfo = {} as RegisterInfo;
 
+    // 아이디 Input change 시 호출
     onIdChange = (e:ChangeEvent<HTMLInputElement>) => {
         this.setState({ id: e.target.value });
         this.setState({idReg: idRegExp.test(e.target.value)});
     }
 
+    // 아이디 중복 체크
     idDuplicate = (e:ChangeEvent<HTMLInputElement>) => {
-            // DB 체크
+        // TODO: api call check
     }
 
+    // 비밀번호 input change 시 호출 -> 비밀번호 형식 및 비밀번호 확인 체크
     onPwChange = (e:ChangeEvent<HTMLInputElement>) => {
         const pwVal = e.target.value;
         const successPW: boolean = pwRegExp.test(pwVal);
 
         this.setState({ pw: pwVal, pwReg: successPW });
-        this.setState({pwConfirm: successPW && this.state.pw === e.target.value});
+        this.setState({pwConfirm: this.state.pw === e.target.value});
     }
 
+    // 비밀번호와 비밀번호 형식과 같은 지 확인
     isPwEqaul = (e:ChangeEvent<HTMLInputElement>) => {
         this.setState({pwConfirm: this.state.pw === e.target.value});
     }
