@@ -1,0 +1,35 @@
+@import "./../../assets/stylesheets/style.scss";
+
+.header {
+    margin: 40px 0;
+    .title {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+    }
+}
+
+.filter {
+    margin-top: 30px;
+    padding: 15px 20px;
+    background: $lightGrey;
+    border: 1px solid $darkGrey;
+    .range, .location {
+        display: inline-block;
+    }
+    .range {
+        width: 50%;
+    }
+    .location {
+        margin-left: 50px;
+    }
+}
+
+.missing-list {
+    margin-top: 20px;
+}
+
+.missing-item {
+    display: inline-block;
+    width: calc(100% / 4);
+}
