@@ -39,13 +39,19 @@ class RegisterPage extends Component<RegisterInfo> {
         this.setState({pwConfirm: this.state.pw === e.target.value});
     }
 
+    register(e: any): void {
+        e.preventDefault();
+
+        // TODO: 회원가입 api call하는 로직 필요
+    }
+
     render() {
         return (
             <div className={cx('container')}>
                 <div className={cx('register-box')}>
                     <h2 className={cx('register-title')}>회원가입</h2>
 
-                    <form className={cx('register-form')}>
+                    <form className={cx('register-form')} onSubmit={this.register.bind(this)}>
                         <span className={cx('register-label')}>이메일</span><br/>
                         <input className={cx('register-input')} type="email" name="email" placeholder="이메일" required/> <p/>
 
