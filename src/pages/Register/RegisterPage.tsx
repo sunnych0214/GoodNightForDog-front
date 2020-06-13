@@ -19,14 +19,8 @@ class RegisterPage extends Component<RegisterInfo> {
     state:RegisterInfo = {} as RegisterInfo;
 
     onIdChange = (e:ChangeEvent<HTMLInputElement>) => {
-        if(idRegExp.test(e.target.value)) {
-            // 정규식 통과
-            this.setState(state => ({id:e.target.value}));
-            this.setState({idReg:true});
-        } else {
-            // 정규식 불통과
-            this.setState({idReg:false});
-        }
+        this.setState({ id: e.target.value });
+        this.setState({idReg: idRegExp.test(e.target.value)});
     }
 
     idDuplicate = (e:ChangeEvent<HTMLInputElement>) => {
@@ -35,27 +29,15 @@ class RegisterPage extends Component<RegisterInfo> {
 
     onPwChange = (e:ChangeEvent<HTMLInputElement>) => {
         const pwVal = e.target.value;
+        const successPW: boolean = pwRegExp.test(pwVal);
 
-        if(pwRegExp.test(pwVal)) {
-            // 정규식 통과
-            this.setState(state => ({pw:pwVal}));
-            this.setState({pwReg:true});
-        } else {
-            // 정규식 불통과
-            this.setState({pwReg:false});
-        }
-
-        this.setState({pwConfirm:false});
+        this.setState({ pw: pwVal, pwReg: successPW });
+        this.setState({pwConfirm: successPW && this.state.pw === e.target.value});
     }
 
     isPwEqaul = (e:ChangeEvent<HTMLInputElement>) => {
-        if(this.state.pw === e.target.value) {
-            this.setState({pwConfirm:true});
-        } else {
-            this.setState({pwConfirm:false});
-        }
+        this.setState({pwConfirm: this.state.pw === e.target.value});
     }
-
 
     render() {
         return (
