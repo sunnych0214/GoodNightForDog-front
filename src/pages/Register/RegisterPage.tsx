@@ -43,7 +43,7 @@ class RegisterPage extends Component<RegisterInfo> {
         this.setState({pwConfirm: this.state.pw === e.target.value});
     }
 
-    register(e: any): void {
+    register(e: React.FormEvent<HTMLFormElement>): void {
         e.preventDefault();
 
         // TODO: 회원가입 api call하는 로직 필요
