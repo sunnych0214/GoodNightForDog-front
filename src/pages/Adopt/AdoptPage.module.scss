@@ -1,0 +1,49 @@
+@import "./../../assets/stylesheets/style.scss";
+
+.container {
+    margin: auto;
+    max-width: 1000px;
+}
+
+.filter {
+    margin-top: 30px;
+    padding: 15px 20px;
+    background: $lightGrey;
+    border: 1px solid $darkGrey;
+    .range {
+        width: 50%;
+    }
+    .checkboxes {
+        margin: 0 50px 0 20px;
+        .checkbox {
+            margin: 0 5px 0 10px;
+        }
+    }
+
+    .range, .checkboxes, .location {
+        display: inline-block;
+    }
+}
+
+.sorting {
+    margin: 10px 0;
+    > span {
+        margin-right: 20px;
+        &.checked {
+            color: $point;
+            font-weight: bold;
+        }
+    }
+}
+
+.adopt-list {
+    .adopt-item {
+      display: inline-block;
+      width: calc(100% / 5 - 10px);
+      margin: 5px;
+    }
+}
+
+.pagination {
+    text-align: center;
+}

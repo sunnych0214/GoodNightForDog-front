@@ -1,0 +1,40 @@
+@import "./../../../assets/stylesheets/style.scss";
+
+.container {
+    max-width: 30vw;
+    margin: auto;
+    padding-top: 30px;
+}
+
+.item {
+    display: block;
+    margin: 5px 0;
+    font-size: 15px;
+    .title {
+        display: inline-block;
+        font-weight: bold;
+        width: 150px;
+    }
+}
+
+.comment {
+    text-align: center;
+}
+
+.button-contact {
+    margin: 0px;
+    padding: 5px;
+    width : 100%;
+    background-color: $goldBrown;
+    color: #ffffff;
+    border : none;
+}
+
+div.slide {
+    width: 20rem;
+    height: 20rem;
+    background-color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
