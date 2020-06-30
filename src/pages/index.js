@@ -9,4 +9,5 @@ export { default as Adopt } from './Adopt/AdoptPage';
 export { default as AdoptDetail } from './Adopt/AdoptDetail/AdoptDetailPage';
 export { default as AdoptReview } from './AdoptReview/AdoptReviewPage';
 export { default as Donation } from './Donation/DonationModule';
+export { default as MissingWritePage } from './missing/missing-write/MissingWritePage';
 export { default as MyPage } from './MyPage/MyPage';
