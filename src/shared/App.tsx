@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
-import { About, Main, Adopt, AdoptDetail, AdoptReview, MissingDetail, Donation } from "../pages";
+import { About, Main, Adopt, AdoptDetail, AdoptReview, MissingDetail, Donation, Register } from "../pages";
 import { Login, SearchId, SearchPw } from "../pages";
 import { Header } from "../components";
 
@@ -12,6 +12,7 @@ class App extends Component {
         <Header></Header>
         <Route exact path="/" component={Main} />
         <Route path="/about" component={About} />
+        <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
         <Route path="/searchId" component={SearchId}/>
         <Route path="/searchPw" component={SearchPw}/>
