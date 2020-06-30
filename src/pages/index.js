@@ -1,5 +1,6 @@
 export { default as About } from './About/AboutModule';
 export { default as Main } from './Main/MainPage';
+export { default as Register } from  './Register/RegisterPage';
 export { default as Login } from './Login/LoginModule';
 export { default as SearchId } from './Login/search/SearchIdModule';
 export { default as SearchPw } from './Login/search/SearchPwModule';
@@ -9,3 +10,4 @@ export { default as AdoptDetail } from './Adopt/AdoptDetail/AdoptDetailPage';
 export { default as AdoptReview } from './AdoptReview/AdoptReviewPage';
 export { default as Donation } from './Donation/DonationModule';
 export { default as MissingWritePage } from './missing/missing-write/MissingWritePage';
+export { default as MyPage } from './MyPage/MyPage';

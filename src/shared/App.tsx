@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
-import { About, Main, Adopt, AdoptDetail, AdoptReview, MissingDetail, Donation, MissingWritePage } from "../pages";
-import { Login, SearchId, SearchPw } from "../pages";
+import { About, Main, Adopt, AdoptDetail, AdoptReview, MissingDetail,
+  Register, Donation, MyPage, Login, SearchId, SearchPw, MissingWritePage } from "../pages";
 import { Header } from "../components";
 
 class App extends Component {
-
   render() {
     return (
       <div>
         <Header></Header>
         <Route exact path="/" component={Main} />
         <Route path="/about" component={About} />
+        <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
         <Route path="/searchId" component={SearchId}/>
         <Route path="/searchPw" component={SearchPw}/>
@@ -21,6 +21,7 @@ class App extends Component {
         <Route path="/missing/:id" component={ MissingDetail }/>
         <Route path="/adopt-review" component={AdoptReview} />
         <Route path="/donation" component={Donation} />
+        <Route path="/my-page" component={MyPage} />
       </div>
     );
   }

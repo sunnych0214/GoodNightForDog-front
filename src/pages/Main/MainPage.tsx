@@ -64,7 +64,6 @@ const mockupData = {
 };
 
 const MainPage = () => {
-
     return (
         <div className={cx('container')}>
             <div className={cx('side-container')}>
