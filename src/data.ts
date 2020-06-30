@@ -11,3 +11,6 @@ export const LOCATIONS = [{
     text: '서울특별시',
     value: '서울특별시',
 }];
+
+export const MIN_WEIGHT: number = 0;
+export const MAX_WEIGHT: number = 100;

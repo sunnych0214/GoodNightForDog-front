@@ -4,13 +4,10 @@ import classnames from 'classnames/bind';
 import { MissingModel } from '../../models/interfaces';
 import { Tab, Dropdown, DropdownProps } from 'semantic-ui-react';
 import InputRange from 'react-input-range';
-import { LOCATIONS } from '../../data';
+import { LOCATIONS, MAX_WEIGHT, MIN_WEIGHT } from '../../data';
 import { MissingItem } from '../../components';
 
 const cx = classnames.bind(styles);
-
-const MIN_WEIGHT: number = 0;
-const MAX_WEIGHT: number = 50;
 
 interface MissingState {
     missings: MissingModel[];   // 실종 list

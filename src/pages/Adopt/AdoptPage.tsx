@@ -4,13 +4,10 @@ import classnames from 'classnames/bind';
 import InputRange from 'react-input-range';
 import { Dropdown, Pagination, PaginationProps, DropdownProps } from 'semantic-ui-react';
 import { AdoptItem } from '../../components';
-import { LOCATIONS } from '../../data';
+import { LOCATIONS, MIN_WEIGHT, MAX_WEIGHT } from '../../data';
 import 'react-input-range/lib/css/input-range/input-range.css';
 
 const cx = classnames.bind(styles);
-
-const MIN_WEIGHT: number = 0;
-const MAX_WEIGHT: number = 50;
 
 interface RangeModel {
     min: number;
