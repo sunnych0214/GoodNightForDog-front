@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
-import { About, Main, Adopt, AdoptDetail, AdoptReview, MissingDetail, Donation, Register } from "../pages";
-import { Login, SearchId, SearchPw } from "../pages";
+import { About, Main, Adopt, AdoptDetail, AdoptReview, MissingDetail,
+  Register, Donation, MyPage, Login, SearchId, SearchPw } from "../pages";
 import { Header } from "../components";
 
 class App extends Component {
-
   render() {
     return (
       <div>
@@ -21,6 +20,7 @@ class App extends Component {
         <Route path="/missing/:id" component={ MissingDetail }/>
         <Route path="/adopt-review" component={AdoptReview} />
         <Route path="/donation" component={Donation} />
+        <Route path="/my-page" component={MyPage} />
       </div>
     );
   }
