@@ -4,20 +4,10 @@ import classnames from 'classnames/bind';
 import InputRange from 'react-input-range';
 import { Dropdown, Pagination, PaginationProps, DropdownProps } from 'semantic-ui-react';
 import { AdoptItem } from '../../components';
+import { LOCATIONS, MIN_WEIGHT, MAX_WEIGHT } from '../../data';
 import 'react-input-range/lib/css/input-range/input-range.css';
 
 const cx = classnames.bind(styles);
-
-const MIN_WEIGHT: number = 0;
-const MAX_WEIGHT: number = 50;
-
-// DropDown Location List
-// TODO: List 형식 바꿔야함
-const locations = [{
-    key: '1',
-    text: '서울특별시',
-    value: '서울특별시',
-}];
 
 interface RangeModel {
     min: number;
@@ -139,7 +129,7 @@ class AdoptPage extends Component<AdoptProps, AdoptState> {
                         checked={temporaryFilter} onChange={() => this.changeAdoptOrTemporary('temporary')} />임시보호
                 </div>
                 <div className={cx('location')}>
-                    <Dropdown placeholder='지역' search selection options={locations}
+                    <Dropdown placeholder='지역' search selection options={LOCATIONS}
                         onChange={this.changeLocation.bind(this)}/>
                 </div>
             </div>

@@ -4,3 +4,13 @@ export const BREEDS = ['골든 리트리버', '꼬똥 드 튤리어', '닥스훈
 , '시바 이누', '시베리안 허스키', '시추', '아프간하운드', '올드 잉글리시 쉽독', '요크셔테리어', '웰시코기'
 , '재패니스 친', '진도견', '치우차우', '치와와', '코카스파니엘', '콜리', '파피용', '퍼크', '페키니즈'
 , '포메라니안', '푸들', '프렌치 불독', '하바네즈', '기타'];
+
+// TODO: List 형식 바꿔야함
+export const LOCATIONS = [{
+    key: '1',
+    text: '서울특별시',
+    value: '서울특별시',
+}];
+
+export const MIN_WEIGHT: number = 0;
+export const MAX_WEIGHT: number = 100;
