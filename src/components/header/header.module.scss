@@ -1,29 +1,8 @@
 @import "./../../assets/stylesheets/style.scss";
 
-$accountHeight: 20px;
-$logoDivHeight: 70px;
-$navHeight: 45px;
-$logoSize: 60px;
-
-div.header {
-    height: $accountHeight + $logoDivHeight + $navHeight;
-    div.account {
-        height: $accountHeight;
-        text-align: right;
-        .login, .register {
-            padding: 0 5px;
-        }
-    }
-    div.logo {
-        height: $logoDivHeight;
-        text-align: center;
-        img {
-            width: $logoSize;
-            height: $logoSize;
-        }
-    }
+header {
+    height: $navbarHeight;
     nav {
-        height: $navHeight;
-        // top: $accountHeight + $logoDivHeight;
+        height: $navbarHeight;
     }
 }
