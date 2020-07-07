@@ -8,20 +8,39 @@ $min-width: 992px;
 }
 
 nav {
-  background: #fff;
-  border: 1px solid #a7a7a7;
+  min-height: 60px;
+  background: rgba(255, 255, 255, .3);
+  box-shadow: 0 0 10px #d6d6d6;
+  div.logo {
+    img {
+      width: auto;
+      height: 60px;
+    }
+  }
+
+  ul li {
+    color: $brown;
+  }
+
   ul.tabs {
-    width: 100%;
+    margin: auto;
     li.nav-item {
-      width: calc(100% / 6);
+      width: 70px;
       text-align: center;
-      color: #000;
+      font-weight: 900;
       &.active {
         font-weight: bold;
         .link {
           color: #000;
         }
       }
+    }
+  }
+
+  ul.account {
+    max-width: 170px;
+    li.nav-item {
+      width: 70px;
     }
   }
 }

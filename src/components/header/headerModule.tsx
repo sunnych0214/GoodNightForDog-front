@@ -22,6 +22,7 @@ class HeaderComponent extends Component<IRecipeProps> {
   render () {
     return (
       <div className={cx('header')}>
+        {/*
         <div className={cx('account')}>
           <Link to="/login">
             <button className={cx('btn', 'btn-link', 'login')}>로그인</button>
@@ -34,6 +35,7 @@ class HeaderComponent extends Component<IRecipeProps> {
         <div className={cx('logo')}>
           <Link to="/"><img src="logo.svg" alt="logo" /></Link>
         </div>
+        */}
         <Navbar></Navbar>
       </div>
     );
