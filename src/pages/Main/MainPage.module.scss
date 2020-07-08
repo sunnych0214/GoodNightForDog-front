@@ -5,6 +5,14 @@ $slideHeight: 300px;
 .container {
   margin: 10px;
 
+  .slide-container {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: $slideHeight;
+    box-shadow: 0px 15px 30px -15px $point;
+  }
+
   .slide-item {
     position: relative;
     height: $slideHeight;
@@ -16,16 +24,15 @@ $slideHeight: 300px;
       .content-box {
         position: absolute;
         top: 30%;
-        right: calc(50% + 70px);
+        left: 10%;
         color: $brown;
         .title {
           font-size: 1.5rem;
           line-height: 2.2rem;
-          font-weight: 900;
+          font-weight: 700;
         }
         .content {
           margin-top: 10px;
-          font-weight: bold;
         }
       }
     }
@@ -51,6 +58,7 @@ $slideHeight: 300px;
 
   .pager-box {
     justify-content: left;
+    margin-left: 10%;
   }
 
   .pager {
@@ -91,17 +99,12 @@ $slideHeight: 300px;
     content: "";
   }
 
-  .divider {
-    width: 100%;
-    height: 1px;
-    margin: 20px 0;
-    background: #a7a7a7;
-  }
-
   .dog-list-wrap {
+    padding-top: $slideHeight + 50px;
     .header {
       position: relative;
       margin: 15px 0;
+      color: $brown;
       .title {
         font-size: 18px;
         font-weight: bold;

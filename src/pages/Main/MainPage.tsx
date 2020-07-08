@@ -121,8 +121,6 @@ const MainPage = () => {
                 </div>
             </div>
 
-            <div className={cx('divider')}></div>
-
             <div className={cx('dog-list-wrap')}>
                 <div className={cx('header')}>
                     <span className={cx('title')}>안락사 임박인 아이들</span>

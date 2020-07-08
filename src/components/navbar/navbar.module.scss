@@ -27,14 +27,18 @@ nav {
     li.nav-item {
       width: 70px;
       text-align: center;
-      font-weight: 900;
+      font-weight: 700;
       &.active {
-        font-weight: bold;
+        font-weight: 700;
         .link {
-          color: #000;
+          color: $brown;
         }
       }
     }
+  }
+
+  .nav-link {
+    color: $brown;
   }
 
   ul.account {
