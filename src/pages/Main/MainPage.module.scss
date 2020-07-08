@@ -107,19 +107,19 @@ $slideHeight: 300px;
       color: $brown;
       .title {
         font-size: 18px;
-        font-weight: bold;
+        font-weight: 700;
       }
       .more {
         position: absolute;
         right: 10px;
         font-weight: 10px;
-        color: #a7a7a7;
+        color: $brown;
       }
     }
     .dog-list-container {
       .dog {
         display: inline-block;
-        width: calc(100% / 5 - 10px);
+        width: calc(100% / 4 - 10px);
         margin: 0 5px;
       }
     }

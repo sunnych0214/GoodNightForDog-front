@@ -1,11 +1,9 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import styles from "./adoptItem.module.scss";
 import classNames from "classnames/bind";
-
 import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles);
-
 const transform = { 'color': '털 색', 'age': '나이', 'weight': '몸무게', 'location': '지역' };
 
 class adoptItemModule extends Component {
@@ -14,20 +12,22 @@ class adoptItemModule extends Component {
 
     return (
       <Link to={'/adopt/' + dog._id}>
-        <div className={cx('box')}>
-          <div className={cx('d-day')}>
-            D - {dog.dDay}
+        <div className={cx('d-day-box')}>
+          <div className={cx('d-day')}>D-{dog.dDay}</div>
+        </div>
+
+        <div className={cx('dog-content')}>
+          <img src={dog.thumbnail} alt="thumbnail" />          
+          <div className={cx('content')}>
+            <div className={cx('value')}>
+              <div className={cx('title')}>{dog.species}({dog.gender})</div>
+              <div className={cx('etc')}>
+                <span>{dog.color}</span>
+                <span>{dog.age}</span>
+                <span>{dog.weight}</span>
+              </div>
+            </div>
           </div>
-          <div className={cx('thumbnail')}>
-            <img src={dog.thumbnail} alt="thumbnail" />
-          </div>
-          <div className={cx('title')}>{dog.species} ({dog.gender})</div>
-          {
-            ['color', 'age', 'weight', 'location'].map((tag) => <div key={tag} className={cx('item', tag)}>
-              <label>{transform[tag]}</label>
-              <span>{dog[tag]}</span>
-            </div>)
-          }
         </div>
       </Link>
     );

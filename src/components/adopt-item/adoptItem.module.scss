@@ -1,5 +1,64 @@
 @import "./../../assets/stylesheets/style.scss";
 
+$thumbnailSize: 230px;
+
+.d-day-box {
+    .d-day {
+        width: 50px;
+        margin: auto;
+        padding: 3px 0;
+        color: $white;
+        font-weight: 700;
+        font-size: $font-size-lg;
+        text-align: center;
+        background-color: $orange;
+        border-radius: 5px;
+    }
+}
+
+.dog-content {
+    position: relative;
+    width: $thumbnailSize;
+    height: $thumbnailSize;
+    margin: 10px auto auto;
+    img {
+        width: $thumbnailSize;
+        height: $thumbnailSize;
+        border-radius: 50%;
+    }
+    div.content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: $thumbnailSize;
+        height: $thumbnailSize;
+        color: $white;
+        text-align: center;
+        font-weight: 600;
+        background: $point;
+        border-radius: 50%;
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transition: visibility 0s, opacity 0.5s linear; 
+        transition: visibility 0s, opacity 0.5s linear;
+        .value {
+            .etc {
+                margin-top: 10px;
+                span {
+                    margin: 0 10px;
+                }
+            }
+        }
+    }
+}
+.dog-content:hover div.content {
+    visibility: visible;
+    opacity: 0.7;
+}
+
 div.box {
     position: relative;
     padding: 15px 20px;

@@ -58,16 +58,6 @@ const mockupData = {
         age: '8개월 추정',
         weight: '6KG',
         location: '서울특별시 금천구'
-      }, {
-        _id: '4',
-        dDay: 5,
-        thumbnail: 'images/thumbnail.png',
-        species: '믹스견',
-        gender: '남',
-        color: '흰&갈&검',
-        age: '8개월 추정',
-        weight: '6KG',
-        location: '서울특별시 금천구'
       }
     ]
 };
