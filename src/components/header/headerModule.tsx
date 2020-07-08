@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import styles from "./header.module.scss";
 import classNames from "classnames/bind";
-import { Link } from "react-router-dom";
 import { Navbar } from "..";
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const cx = classNames.bind(styles);
 
 // tslint:disable-next-line:no-empty-interface
