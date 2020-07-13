@@ -1,51 +1,125 @@
 @import "./../../assets/stylesheets/style.scss";
 
-$slideHeight: 250px;
+$slideHeight: 300px;
 
 .container {
   margin: 10px;
 
-  .side-container {
-    .control-btn {
-        > div.icon {
-            padding: 10px 5px;
-            background: rgba(0, 0, 0, .3);
-            border-radius: 50px;
-        }
+  .slide-container {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: $slideHeight;
+    box-shadow: 0px 15px 30px -15px $point;
+  }
+
+  .slide-item {
+    position: relative;
+    height: $slideHeight;
+    .slide-content, .slide-img-box {
+      display: inline-block;
+      width: 50%;
     }
-    .slide_image {
-      width: auto;
-      height: $slideHeight;
-      margin: auto;
+    .slide-content {
+      .content-box {
+        position: absolute;
+        top: 30%;
+        left: 10%;
+        color: $brown;
+        .title {
+          font-size: 1.5rem;
+          line-height: 2.2rem;
+          font-weight: 700;
+        }
+        .content {
+          margin-top: 10px;
+        }
+      }
+    }
+    .slide-img-box > img {
+      width: 100%;
+      height: auto;
     }
   }
 
-  .divider {
+  .arrow-box {
+    position: absolute;
+    right: 50%;
+    bottom: 10px;
+    .control-btn {
+      display: inline-block;
+      > div.icon {
+        width: 50px;
+        font-size: 22px;
+        color: $brown;
+      }
+    }
+  }
+
+  .pager-box {
+    justify-content: left;
+    margin-left: 10%;
+  }
+
+  .pager {
+    position: relative;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    width: 10px;
+    height: 10px;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    background: transparent;
+    border-radius: 50%;
+    border: 1px solid $point;
+  }
+
+  .active-pager {
+    background: $point;
+  }
+    
+  .pager::before {
+      position: absolute;
+      top: -10px;
+      left: 0;
+      display: inline-block;
+      width: 100%;
+      height: 10px;
+      content: "";
+  }
+  .pager::after {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    display: inline-block;
     width: 100%;
-    height: 1px;
-    margin: 20px 0;
-    background: #a7a7a7;
+    height: 10px;
+    content: "";
   }
 
   .dog-list-wrap {
+    padding-top: $slideHeight + 50px;
     .header {
       position: relative;
       margin: 15px 0;
+      color: $brown;
       .title {
         font-size: 18px;
-        font-weight: bold;
+        font-weight: 700;
       }
       .more {
         position: absolute;
         right: 10px;
         font-weight: 10px;
-        color: #a7a7a7;
+        color: $brown;
       }
     }
     .dog-list-container {
       .dog {
         display: inline-block;
-        width: calc(100% / 5 - 10px);
+        width: calc(100% / 4 - 10px);
         margin: 0 5px;
       }
     }

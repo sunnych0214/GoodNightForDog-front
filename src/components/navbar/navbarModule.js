@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import styles from './navbar.module.scss';
 import classnames from 'classnames/bind';
 import { Link, withRouter } from "react-router-dom";
+import logo_img from "./../../assets/imgs/logo.png";
 
 const cx = classnames.bind(styles);
 
@@ -49,6 +50,9 @@ class navbarModule extends Component {
             <span className={cx('navbar-toggler-icon')}></span>
         </button>
         <div className={cx('collapse', 'navbar-collapse')} id="navbarSupportedContent">
+          <div className={cx('logo')}>
+            <Link to="/"><img src={logo_img} alt=""></img></Link>
+          </div>
           <ul className={cx('navbar-nav', 'mr-auto', 'tabs')}>
             {
               this.state.tabs.map((tab) => 
@@ -57,6 +61,14 @@ class navbarModule extends Component {
                 </li>
               )
             }
+          </ul>
+          <ul className={cx('account', 'navbar-nav', 'mr-audo')}>
+            <li className={cx('nav-item')}>
+              <Link to="login" className={cx('nav-link', 'link')}>로그인</Link>
+            </li>
+            <li className={cx('nav-item')}>
+              <Link to="signup" className={cx('nav-link', 'link')}>회원가입</Link>
+            </li>
           </ul>
         </div>
       </nav>
