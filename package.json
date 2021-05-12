@@ -23,7 +23,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
     "semantic-ui-react": "^0.88.2",
-    "swiper": "^5.3.8",
+    "swiper": "^6.5.1",
     "typescript": "^3.8.3"
   },
   "scripts": {
